@@ -12,21 +12,25 @@ CKnave = Symbol("C is a Knave")
 # Puzzle 0
 # A says "I am both a knight and a knave."
 knowledge0 = And(
-    # TODO
+    Implication(AKnight, And(AKnight, AKnave))
 )
 
 # Puzzle 1
 # A says "We are both knaves."
 # B says nothing.
 knowledge1 = And(
-    # TODO
+    Not(AKnave),
+    AKnight,
+    BKnight
 )
 
 # Puzzle 2
 # A says "We are the same kind."
 # B says "We are of different kinds."
 knowledge2 = And(
-    # TODO
+    Not(And(AKnave, BKnave)),
+    Not(And(AKnight, BKnight))
+  
 )
 
 # Puzzle 3
